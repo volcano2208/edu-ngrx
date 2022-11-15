@@ -5,22 +5,23 @@ import { PostsComponent } from './posts/posts.component';
 
 const routes: Routes = [
   {
-    path: '', children: [
+    path: '',
+    children: [
       {
         path: '',
         pathMatch: 'full',
-        component: PostsComponent
+        component: PostsComponent,
       },
       {
         path: ':id',
-        component: PostDetailComponent
-      }
-    ]
+        component: PostDetailComponent,
+      },
+    ],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class PostRoutingModule { }
+export class PostRoutingModule {}

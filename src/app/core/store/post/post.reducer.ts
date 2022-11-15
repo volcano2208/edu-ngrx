@@ -1,6 +1,6 @@
 import * as PostActions from './post.action';
-import { PostState } from "./post.state";
-import { orderBy } from 'lodash'
+import { PostState } from './post.state';
+import { orderBy } from 'lodash';
 
 const initialState: PostState = {
   posts: [],
@@ -8,7 +8,7 @@ const initialState: PostState = {
   status: 'idle',
   error: '',
   sort: null,
-}
+};
 
 export function postReducer(
   state: PostState = initialState,
@@ -29,13 +29,22 @@ export function postReducer(
     }
 
     case PostActions.GET_POSTS_FAILED:
-      return { ...state, status: 'error', currentPost: null, error: action.error };
+      return {
+        ...state,
+        status: 'error',
+        currentPost: null,
+        error: action.error,
+      };
 
     case PostActions.SORTING_POSTS: {
       let posts = state.posts;
-      const sortOrderCurrent = !action.sort ? null : action.sort === 'asc' ? 'asc' : 'desc';
+      const sortOrderCurrent = !action.sort
+        ? null
+        : action.sort === 'asc'
+        ? 'asc'
+        : 'desc';
       if (sortOrderCurrent) {
-        posts = orderBy([...posts], [sortOrderCurrent]);
+        posts = orderBy([...posts], ['id'], [sortOrderCurrent]);
       }
       return { ...state, sort: action.sort, posts };
     }
@@ -48,7 +57,12 @@ export function postReducer(
       return { ...state, status: 'idle', currentPost: action.post };
 
     case PostActions.GET_POST_FAILED:
-      return { ...state, status: 'error', currentPost: null, error: action.error, };
+      return {
+        ...state,
+        status: 'error',
+        currentPost: null,
+        error: action.error,
+      };
 
     // Default
     default:

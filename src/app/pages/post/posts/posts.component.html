@@ -1,3 +1,7 @@
+<nz-select [(ngModel)]="sortValue" (ngModelChange)="setSorting(sortValue)">
+  <nz-option nzValue="asc" nzLabel="Ascending"></nz-option>
+  <nz-option nzValue="desc" nzLabel="Descending"></nz-option>
+</nz-select>
 <div class="container-posts">
   <ng-container *ngFor=" let post of posts$ | async">
     <nz-card nzHoverable style="width: 240px;">

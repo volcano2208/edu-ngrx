@@ -7,7 +7,7 @@ import { PostEffects } from './store/post/post.effects';
 @NgModule({
   imports: [
     StoreModule.forFeature('feature_post', postReducer),
-    EffectsModule.forFeature([PostEffects])
-  ]
+    EffectsModule.forFeature([PostEffects]),
+  ],
 })
-export class CoreModule { }
+export class CoreModule {}

@@ -1,5 +1,5 @@
-import { PostState } from "./post/post.state";
+import { PostState } from './post/post.state';
 
 export interface AppState {
-  feature_post: PostState
+  feature_post: PostState;
 }
