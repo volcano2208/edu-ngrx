@@ -3,10 +3,7 @@
     "default": {
       "runner": "nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "test"
-        ],
+        "cacheableOperations": ["build", "test"],
         "accessToken": "ODlkYTg2NWYtYjM2ZC00NmYwLWFhZTYtNmQ3OTE2MTZjN2NifHJlYWQtd3JpdGU="
       }
     }
@@ -14,10 +11,7 @@
   "defaultBase": "master",
   "namedInputs": {
     "sharedGlobals": [],
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
       "!{projectRoot}/tsconfig.spec.json",
@@ -27,20 +21,11 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     },
     "test": {
-      "inputs": [
-        "default",
-        "^production",
-        "{workspaceRoot}/karma.conf.js"
-      ]
+      "inputs": ["default", "^production", "{workspaceRoot}/karma.conf.js"]
     }
   }
 }

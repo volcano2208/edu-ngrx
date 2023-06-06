@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NzIconModule, NZ_ICONS } from 'ng-zorro-antd/icon';
+import { NZ_ICONS, NzIconModule } from 'ng-zorro-antd/icon';
 
 import {
   DashboardOutline,
